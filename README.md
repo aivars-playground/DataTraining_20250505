@@ -13,4 +13,3 @@ TRAININGS
 p01-preparing-data-machine-learning-java
 ---
 https://app.pluralsight.com/library/courses/preparing-data-machine-learning-java
-
