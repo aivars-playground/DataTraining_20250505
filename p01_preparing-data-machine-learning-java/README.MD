@@ -1,14 +1,16 @@
-TRAININGS
+TRAINING
 ========
 p01-preparing-data-machine-learning-java
 ---
 https://app.pluralsight.com/library/courses/preparing-data-machine-learning-java
 
-DATASETS
+PREPARATION
 ====
 
+RESTORING SAMPLE DATA 
+---
 ```shell
-echo restoring sample data...
+echo ******************************** RESTORING SAMPLE DATA
 if [ -d "./.data" ]; then
   rm -rf ./.data
 else
@@ -16,9 +18,13 @@ else
 fi
 ```
 
+Snippets - reading different files types
+---
 ```shell
-echo restoring sample workdir......
+echo ******************************** RESTORING WORKDIR
 rm -rf ./workdir/data
 mkdir ./workdir/data
 cp .data/preparing-data-machine-learning-java/purchases/sales-june-2020.csv ./workdir/data/
+echo ******************************** READING CSV
+mvn exec:java -pl snippets -Dexec.mainClass=CsvFileReader -Dexec.args="workdir/data/sales-june-2020.csv"
 ```
