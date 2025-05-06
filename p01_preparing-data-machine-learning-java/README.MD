@@ -20,6 +20,7 @@ fi
 
 Snippets - reading different files types
 ---
+* CSV file
 ```shell
 echo ******************************** RESTORING WORKDIR
 rm -rf ./workdir/data
@@ -27,4 +28,14 @@ mkdir ./workdir/data
 cp .data/preparing-data-machine-learning-java/purchases/sales-june-2020.csv ./workdir/data/
 echo ******************************** READING CSV
 mvn exec:java -pl snippets -Dexec.mainClass=CsvFileReader -Dexec.args="workdir/data/sales-june-2020.csv"
+```
+
+* Excel file
+```shell
+echo ******************************** RESTORING WORKDIR
+rm -rf ./workdir/data
+mkdir ./workdir/data
+cp .data/preparing-data-machine-learning-java/purchases/purchases-june-2020.xlsx ./workdir/data/
+echo ******************************** READING XSLX
+mvn exec:java -pl snippets -Dexec.mainClass=XlsFileReader -Dexec.args="workdir/data/purchases-june-2020.xlsx"
 ```
